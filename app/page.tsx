@@ -45,7 +45,7 @@ export default function Home() {
               style={{
                 width: `${100 + i * 50}px`,
                 height: `${100 + i * 50}px`,
-                backgroundColor: `rgba(200, 200, 200, ${0.08 - i * 0.01})`,
+                backgroundColor: `rgba(255, 255, 255, ${0.08 - i * 0.01})`,
                 left: `${5 + i * 15}%`,
                 top: `${-30 + i * 20}%`,
                 animation: `smoke ${4 + i * 0.5}s ease-in-out infinite`,
@@ -58,7 +58,7 @@ export default function Home() {
 
         {/* Character Video - Much Bigger */}
         <div className="relative z-10 animate-pulse hover:animate-none transition-all duration-300">
-          <div className="absolute -inset-8 bg-gradient-to-r from-blue-500/40 via-purple-500/40 to-pink-500/40 rounded-3xl blur-3xl"></div>
+          <div className="absolute -inset-8 bg-white/40 rounded-3xl blur-3xl"></div>
           <video
             className="relative w-96 h-96 md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] object-cover rounded-3xl shadow-2xl border-4 border-white/60 backdrop-blur-md"
             autoPlay
@@ -72,58 +72,51 @@ export default function Home() {
       </div>
 
       {/* RIGHT SIDE - Content */}
-      <div className="w-1/2 h-full bg-gradient-to-br from-white/40 via-white/40 to-white/40 flex flex-col items-center justify-center px-8 md:px-12 py-8">
+      <div className="w-1/2 h-full bg-[#F0F7F8] flex flex-col items-center justify-center px-8 md:px-12 py-8">
         <div className="flex flex-col items-center gap-8 text-center max-w-md">
           {/* Header */}
           <div className="space-y-3">
+            <p className="text-2xl md:text-3xl text-black drop-shadow-lg">
+              HAPPY 420
+            </p>
             <h1 className="text-5xl md:text-6xl font-bold text-black drop-shadow-lg">
-              Launch
+              $420LENNY
             </h1>
-            <div className="h-1 w-20 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 mx-auto rounded-full"></div>
+       
+            <div className="h-1 w-20 bg-black mx-auto rounded-full"></div>
           </div>
 
           {/* Description */}
-          <p className="text-lg text-gray-500 leading-relaxed">
-            Join our exclusive community and be part of something extraordinary
+          <p className="text-lg text-black leading-relaxed">
+            The "Lenny Face" emoticon ( ͡° ͜ʖ ͡°) originated on the Finnish imageboard Ylilauta before gaining popularity on 4chan.
           </p>
 
           {/* Contract Address Card */}
-          <div className="w-full bg-white/30 backdrop-blur-md border border-white/30 rounded-2xl px-6 py-5 shadow-2xl hover:shadow-xl transition-all duration-300 hover:bg-white/15">
+          <div className="w-full bg-white backdrop-blur-md border border-gray-200 rounded-2xl px-6 py-5 shadow-2xl hover:shadow-xl transition-all duration-300">
             <div className="flex flex-col gap-4">
-              <div className="text-xs text-gray-400 font-semibold uppercase tracking-widest">
+              <div className="text-xs text-black font-semibold uppercase tracking-widest">
                 📋 Contract Address
               </div>
-              <code className="text-xs md:text-sm text-white font-mono break-all bg-black/40 p-3 rounded-lg">
+              <code className="text-xs md:text-sm text-black font-mono break-all bg-gray-100 p-3 rounded-lg">
                 {CONTRACT_ADDRESS}
               </code>
               <button
                 onClick={handleCopyAddress}
                 className={`w-full py-3 rounded-lg font-semibold transition-all duration-300 text-base ${
                   copied
-                    ? "bg-green-500 text-white shadow-lg scale-105"
-                    : "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transform hover:scale-105"
-                }}`}
+                    ? "bg-black text-white shadow-lg scale-105"
+                    : "bg-black hover:bg-gray-800 text-white shadow-lg hover:shadow-xl transform hover:scale-105"
+                }`}
               >
                 {copied ? "✓ Copied!" : "Copy Address"}
               </button>
             </div>
           </div>
 
-          {/* Stats Section */}
-          <div className="w-full grid grid-cols-3 gap-4">
-            <div className="bg-white/30 border border-white/20 rounded-lg p-3 text-center hover:bg-white/10 transition-all">
-              <div className="text-2xl font-bold text-blue-400">100K+</div>
-              <div className="text-xs text-gray-400 mt-1">Members</div>
-            </div>
-            <div className="bg-white/5 border border-white/20 rounded-lg p-3 text-center hover:bg-white/10 transition-all">
-              <div className="text-2xl font-bold text-purple-400">$50M+</div>
-              <div className="text-xs text-gray-400 mt-1">Volume</div>
-            </div>
-            <div className="bg-white/5 border border-white/20 rounded-lg p-3 text-center hover:bg-white/10 transition-all">
-              <div className="text-2xl font-bold text-pink-400">24/7</div>
-              <div className="text-xs text-gray-400 mt-1">Support</div>
-            </div>
-          </div>
+          {/* Animated Lenny Face */}
+          <p className="text-4xl md:text-5xl text-black drop-shadow-lg animate-bounce hover:animate-none cursor-pointer transition-all duration-300 hover:scale-125">
+            ( ͡° ͜ʖ ͡°)
+          </p>
         </div>
 
         {/* X Community Link - Bottom Right */}
@@ -136,9 +129,9 @@ export default function Home() {
             onMouseLeave={() => setHoveredLink(false)}
             className={`flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-110 ${
               hoveredLink
-                ? "bg-white text-black shadow-2xl"
-                : "bg-white/80 text-gray-900 shadow-lg hover:bg-white/95"
-            }}`}
+                ? "bg-black text-white shadow-2xl"
+                : "bg-white text-black border border-gray-200 shadow-lg hover:bg-gray-50"
+            }`}
           >
             <svg
               className="w-5 h-5"
@@ -154,8 +147,8 @@ export default function Home() {
 
         {/* Badge - Bottom Left */}
         <div className="absolute bottom-8 left-8 z-20">
-          <div className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-400/50 rounded-full px-4 py-2 text-sm font-semibold text-blue-300 backdrop-blur-md">
-            ✨ Limited Edition Launch
+          <div className="bg-white border border-gray-200 rounded-full px-4 py-2 text-sm font-semibold text-black backdrop-blur-md shadow-md">
+            🌿 HAPPY 420 ( ͡° ͜ʖ ͡°)
           </div>
         </div>
       </div>
