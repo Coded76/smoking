@@ -4,7 +4,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import Image from "next/image";
 
-const CONTRACT_ADDRESS = "0x1234567890123456789012345678901234567890";
+const CONTRACT_ADDRESS = "F6q1Cqe6Gj3hnBUgLcZZmZm6FPuF2DpxfYJevVAypump";
 const X_COMMUNITY_LINK = "https://x.com";
 
 export default function Home() {
